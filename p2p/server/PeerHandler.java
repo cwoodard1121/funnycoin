@@ -76,7 +76,6 @@ public class PeerHandler extends BeamHandler {
             JsonParser parser = new JsonParser();
             JsonObject obj = (JsonObject) parser.parse(beamMessage.get("message"));
             System.out.println("TRANSACTION RECIEVED: " + beamMessage.get("message"));
-            System.out.println("whats up");
             System.out.println(getBalanceFromChain(obj.get("ownerWallet").getAsString(),obj.get("token").getAsString()) + " AA" + obj.get("amount").getAsFloat());
             if(getBalanceFromChain(obj.get("ownerWallet").getAsString(),obj.get("token").getAsString()) > obj.get("amount").getAsFloat()) {
                 System.out.println("balance valid");
